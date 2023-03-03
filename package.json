@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --onlyChanged",
+    "test": "jest --onlyChanged --watch",
     "testAll": "jest"
   },
   "keywords": [],
