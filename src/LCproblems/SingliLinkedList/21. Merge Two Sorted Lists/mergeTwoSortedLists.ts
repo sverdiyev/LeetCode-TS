@@ -1,13 +1,4 @@
-import { makeLinkedList } from "../../../utils/LinkedLists";
-
-export class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode, makeLinkedList } from "../../../utils/LinkedLists";
 
 export function mergeTwoLists(
   list1: ListNode | null,
