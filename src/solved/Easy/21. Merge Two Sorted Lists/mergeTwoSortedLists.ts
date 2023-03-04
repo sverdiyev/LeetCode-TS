@@ -1,3 +1,5 @@
+import { makeLinkedList } from "../../../utils/LinkedLists";
+
 export class ListNode {
   val: number;
   next: ListNode | null;
@@ -11,51 +13,41 @@ export function mergeTwoLists(
   list1: ListNode | null,
   list2: ListNode | null
 ): ListNode | null {
-  const dummy = new ListNode();
-
-  let l1Head = list1;
-  let l2Head = list2;
-
-  while (list1?.val || list2?.val) {
-    if (list1?.val && !list2?.val) {
-    }
-
-    if (list1?.val >= list2?.val) {
-      dummy.next = list2;
-      l2Head = list2?.next || null;
-    } else {
-      dummy.next = list1;
-      l1Head = list1?.next || null;
-    }
+  if (!list1) {
+    return list2;
   }
 
-  return null;
+  if (!list2) {
+    return list1;
+  }
+
+  const dummyOriginalHead = new ListNode();
+  let dummyCurrHead = dummyOriginalHead;
+
+  let l1Head: ListNode | null = list1;
+  let l2Head: ListNode | null = list2;
+
+  while (l1Head && l2Head) {
+    if (l1Head.val >= l2Head.val) {
+      dummyCurrHead.next = l2Head;
+      l2Head = l2Head.next || null;
+    } else {
+      dummyCurrHead.next = l1Head;
+      l1Head = l1Head.next || null;
+    }
+    dummyCurrHead = dummyCurrHead.next;
+  }
+
+  if (l1Head && !l2Head) {
+    dummyCurrHead.next = l1Head;
+  } else {
+    dummyCurrHead.next = l2Head;
+  }
+
+  return dummyOriginalHead.next;
 }
 
-//
-// const betweenCurrAndNextNode = (l1: ListNode, l2: ListNode) => {
-//   return l1.val > l2.val && l1.val < l2.val;
-// };
-//
-// const placeInBetweenCurrAndNextNode = (l1: ListNode, l2: ListNode) => {
-//   const tmp2 = l2.next;
-//   const tmp1 = l1.next;
-//
-//   l2.next = l1;
-//
-//   l1.next = tmp2;
-//
-//   return [tmp1, tmp2];
-// };
+const list1 = makeLinkedList([-10, -9, -6, -4, 1, 9, 9]);
+const list2 = makeLinkedList([-5, -3, 0, 7, 8, 8]);
 
-// Input: list1 = [1,2,4], list2 = [1,3,4]
-// Output: [1,1,2,3,4,4]
-
-// Input: list1 = [], list2 = []
-// Output: []
-
-// const l1 = [2, 7, 11, 15];
-// const l2 = [2, 7, 11, 15];
-// const target = 9;
-//
-// mergeTwoLists(nums, target);
+mergeTwoLists(list1, list2);
