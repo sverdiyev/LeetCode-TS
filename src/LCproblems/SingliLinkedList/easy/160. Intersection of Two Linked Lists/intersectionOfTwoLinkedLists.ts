@@ -1,4 +1,4 @@
-import { ListNode } from "../../../utils/LinkedLists";
+import { ListNode } from "../../../../utils/LinkedLists";
 
 /**
  *This one is a bit difficult

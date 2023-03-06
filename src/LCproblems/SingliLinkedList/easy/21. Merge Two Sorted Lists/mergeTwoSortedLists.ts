@@ -1,4 +1,4 @@
-import { ListNode, makeLinkedList } from "../../../utils/LinkedLists";
+import { ListNode, makeLinkedList } from "../../../../utils/LinkedLists";
 
 export function mergeTwoLists(
   list1: ListNode | null,

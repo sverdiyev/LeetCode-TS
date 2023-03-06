@@ -1,4 +1,4 @@
-import { ListNode, makeLinkedList } from "../../../utils/LinkedLists";
+import { ListNode, makeLinkedList } from "../../../../utils/LinkedLists";
 
 function deleteDuplicates(head: ListNode | null): ListNode | null {
   const originalHead = head;

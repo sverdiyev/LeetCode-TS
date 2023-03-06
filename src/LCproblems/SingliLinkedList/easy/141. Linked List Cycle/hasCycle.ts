@@ -1,4 +1,4 @@
-import { ListNode } from "../../../utils/LinkedLists";
+import { ListNode } from "../../../../utils/LinkedLists";
 
 /**
  * Time o(N)
