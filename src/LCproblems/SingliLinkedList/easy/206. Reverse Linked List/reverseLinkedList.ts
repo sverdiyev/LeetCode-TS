@@ -1,4 +1,4 @@
-import { ListNode, makeLinkedList } from "../../../../utils/LinkedLists";
+import { ListNode, makeLinkedList } from "~/utils/LinkedLists";
 
 export function reverseLinkedList(head: ListNode | null): ListNode | null {
   let newHead: ListNode | null = null;

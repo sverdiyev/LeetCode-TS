@@ -1,4 +1,4 @@
-import { ListNode, makeLinkedList } from "../../../../utils/LinkedLists";
+import { ListNode, makeLinkedList } from "~/utils/LinkedLists";
 
 /**
  * this solution cane to my mind straight away, but it is not perfect - iteration twice over the list, once - only to find the length etc.

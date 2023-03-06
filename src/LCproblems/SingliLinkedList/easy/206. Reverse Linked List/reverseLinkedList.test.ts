@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
-import { makeLinkedList } from "../../../../utils/LinkedLists";
 import { reverseLinkedList } from "./reverseLinkedList";
+import { makeLinkedList } from "~/utils/LinkedLists";
 
 describe("reverseLinkedList", function () {
   it("test 1", function () {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 import { mergeTwoLists } from "./mergeTwoSortedLists";
-import { makeLinkedList } from "../../../../utils/LinkedLists";
+import { makeLinkedList } from "~/utils/LinkedLists";
 
 describe("twoSum", function () {
   it("test 1", function () {
